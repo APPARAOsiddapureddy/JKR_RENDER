@@ -119,6 +119,19 @@ const VolunteerPlatforms = () => {
               </div>
             ))}
           </div>
+                    <div className="bg-blue-900 text-white p-8 rounded-lg shadow-md">
+                      <h2 className="text-3xl font-bold mb-6 text-center">Ready to Elevate Your Campaign?</h2>
+                      <p className="text-blue-200 text-center mb-8 max-w-3xl mx-auto">
+                        Our expert campaign management team is ready to help you develop a winning strategy, maximize voter engagement, and achieve your political objectives.
+                      </p>
+                      <div className="flex justify-center">
+                        <Link to='/schedule-a-consultation'>
+                          <button className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-100 transition">
+                            Schedule a Consultation
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
         </div>
       </div>
 
