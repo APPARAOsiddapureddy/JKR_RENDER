@@ -1,11 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-
+import { ClipboardList, Calendar, CheckCircle, BookOpen } from "lucide-react"; 
 import volunteerHero from "../assets/Volunteer.jpeg"; 
-// import registrationIcon from "../assets/analytics.jpeg"; 
-// import schedulingIcon from "../assets/analytics.jpeg";
-// import taskIcon from "../assets/analytics.jpeg";
-// import trainingIcon from "../assets/analytics.jpeg";
 
 const VolunteerPlatforms = () => {
   const headingRef = useRef(null);
@@ -57,7 +53,7 @@ const VolunteerPlatforms = () => {
           <div className="flex flex-col md:flex-row items-center gap-12 bg-gradient-to-r from-blue-800 via-blue-700 to-blue-800 p-12 rounded-lg shadow-2xl">
             {/* Text Content */}
             <div className="md:w-3/4 lg:w-1/2 text-center md:text-left bg-slate-900/70 p-8 rounded-xl border border-blue-900/30 shadow-2xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight background-clip-text">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight tracking-tight">
                 Energize Your Volunteer Network with Powerful Tools
               </h1>
               <div className="w-20 h-1.5 bg-blue-500 mb-6 mx-auto md:mx-0 rounded-full"></div>
@@ -86,42 +82,27 @@ const VolunteerPlatforms = () => {
 
         {/* Content Section */}
         <div ref={contentRef} className="bg-white rounded-xl shadow-xl p-8 md:p-12 opacity-0 translate-y-10">
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div>
-              <h2 className="text-2xl font-bold text-slate-800 mb-4">Empower Your Volunteer Network</h2>
-              <p className="text-slate-600 mb-4">
-                Volunteers are the lifeblood of any successful political campaign. Our custom volunteer platforms provide the digital infrastructure you need to recruit, organize, and engage your supporter base effectively.
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-bold text-slate-800 mb-4">Our Approach</h2>
-              <p className="text-slate-600 mb-4">
-                We believe in building intuitive, user-friendly platforms that minimize training time and maximize volunteer productivity from day one.
-              </p>
-            </div>
-          </div>
-
           <h2 className="text-3xl font-bold text-slate-800 mb-8 text-center">What We Offer</h2>
 
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             {[
               {
-                icon: registrationIcon,
+                icon: <ClipboardList className="w-6 h-6 text-white" />,
                 title: "Volunteer Registration & Onboarding",
                 description: "Streamlined sign-up forms with customizable fields to collect relevant information. Automated onboarding emails and resources for new volunteers."
               },
               {
-                icon: schedulingIcon,
+                icon: <Calendar className="w-6 h-6 text-white" />,
                 title: "Event Scheduling & Sign-ups",
                 description: "Interactive calendars with event details, volunteer requirements, and easy registration. Automatic reminders and attendance tracking."
               },
               {
-                icon: taskIcon,
+                icon: <CheckCircle className="w-6 h-6 text-white" />,
                 title: "Task Management System",
                 description: "Assign tasks to individuals or teams based on skills and availability. Track completion status and set priorities."
               },
               {
-                icon: trainingIcon,
+                icon: <BookOpen className="w-6 h-6 text-white" />,
                 title: "Training Resources Hub",
                 description: "Centralized repository for training materials, videos, scripts, and best practices. Progress tracking for volunteer training."
               }
@@ -130,49 +111,13 @@ const VolunteerPlatforms = () => {
                 key={index} 
                 className="feature-item bg-blue-50 p-6 rounded-lg shadow-md opacity-0 transform translate-y-8 transition-all duration-700 hover-lift"
               >
-                <div className="bg-blue-600 text-white p-3 rounded-lg shadow-lg inline-block mb-4">
-                  <img src={feature.icon} alt={feature.title} className="w-6 h-6" />
+                <div className="bg-blue-600 p-3 rounded-lg shadow-lg inline-block mb-4">
+                  {feature.icon}
                 </div>
                 <h3 className="text-xl font-bold text-slate-800 mb-2">{feature.title}</h3>
                 <p className="text-slate-600">{feature.description}</p>
               </div>
             ))}
-          </div>
-
-          {/* Development Process Section */}
-          <div className="bg-blue-50 p-8 rounded-lg shadow-md mb-12">
-            <h2 className="text-3xl font-bold text-slate-800 mb-6 text-center">Our Development Process</h2>
-            <div className="grid md:grid-cols-4 gap-6">
-              {[
-                { number: "1", title: "Discovery & Planning", description: "Analysis of your campaign's volunteer needs and existing processes." },
-                { number: "2", title: "UX Design & Prototyping", description: "Creation of intuitive interfaces tailored to both staff and volunteers." },
-                { number: "3", title: "Development & Integration", description: "Building the platform with secure, scalable technology." },
-                { number: "4", title: "Launch & Support", description: "Comprehensive training, launch assistance, and ongoing optimization." }
-              ].map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                    {step.number}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-2">{step.title}</h3>
-                  <p className="text-slate-600">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA Section */}
-          <div className="bg-blue-900 text-white p-8 rounded-lg shadow-md">
-            <h2 className="text-3xl font-bold mb-6 text-center">Ready to Energize Your Volunteer Base?</h2>
-            <p className="text-blue-200 text-center mb-8 max-w-3xl mx-auto">
-              Let's build a volunteer platform that transforms supporters into effective advocates for your campaign. Our team is ready to create a customized solution tailored to your specific needs.
-            </p>
-            <div className="flex justify-center">
-              <Link to='/schedule-a-consultation'>
-                <button className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-blue-100 transition">
-                  Schedule a Consultation
-                </button>
-              </Link>
-            </div>
           </div>
         </div>
       </div>
