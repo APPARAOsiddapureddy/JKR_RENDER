@@ -46,7 +46,7 @@ const DoorToDoorCampaigns = () => {
     {
       id: "targeting",
       title: "Targeted Voter Outreach",
-      image:"targetVoter",
+      image:targetVoter,
       description: "Precision targeting to connect with the most relevant voters for your campaign, using advanced demographic and behavioral insights.",
       features: [
         "Micro-targeted voter segmentation",
@@ -58,7 +58,7 @@ const DoorToDoorCampaigns = () => {
     {
       id: "surveying",
       title: "Advanced Surveying",
-      image:"advanceSurveying",
+      image:advanceSurveying,
       description: "Capture deep voter insights through professionally designed surveys that go beyond surface-level information.",
       features: [
         "Custom questionnaire design",
@@ -70,7 +70,7 @@ const DoorToDoorCampaigns = () => {
     {
       id: "training",
       title: "Canvasser Training",
-      image:"volunteerTraining",
+      image:volunteerTraining,
       description: "Comprehensive training program to equip your team with the skills and knowledge to conduct effective door-to-door campaigns.",
       features: [
         "Communication skill workshops",
