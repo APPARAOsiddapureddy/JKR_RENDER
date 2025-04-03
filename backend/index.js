@@ -16,7 +16,7 @@ const allowedOrigins = [
     "http://localhost:5173",  // Local development frontend
     "http://localhost:8080",  // Local development frontend
     "https://politicalconsultancy-pegg.vercel.app" ,//production
-    "https://jkrconsultancy.onrender.com" // Production 
+    "https://jkr-consultancy.onrender.com" // Production 
 ];
 
 const corsOptions = {
